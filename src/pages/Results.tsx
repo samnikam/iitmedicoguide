@@ -8,7 +8,7 @@ const toppers = [
     exam: "JEE",
     rank: "99.83%",
     college: "NIT Surathkal",
-    image: "/placeholder.svg",
+    image: "/krishna.png",
     color: "from-amber-500 to-amber-700",
   },
   {

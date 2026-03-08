@@ -141,7 +141,7 @@ const TestimonialPreview = ({
 /* ── HOME PAGE ── */
 const Home = () => {
   const [currentBanner, setCurrentBanner] = useState(0);
-  const banners = ["/Jee.jpeg", "/banner1.webp"];
+  const banners = ["/poster1.jpeg", "/banner1.webp"];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -173,16 +173,16 @@ const Home = () => {
               src={banner}
               alt="Banner"
               className={`w-full transition-opacity duration-1000 ${currentBanner === index
-                ? "relative opacity-100 z-10 h-[300px] md:h-full md:object-contain"
-                : "absolute inset-0 opacity-0 z-0 h-[300px] md:h-full md:object-contain"
+                ? "relative opacity-100 z-10 h-[300px] md:h-full object-contain md:object-fill"
+                : "absolute inset-0 opacity-0 z-0 h-[300px] md:h-full object-contain md:object-fill"
                 }`}
             />
           ))}
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="container mx-auto px-2 md:px-4 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+      <section className="bg-white pt-8 md:pt-0">
+        <div className="container mx-auto px-2 md:px-4 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 pb-8 md:pb-0">
           <StatItem value={4.9} label="STUDENT RATING" sublabel="Verified Reviews" icon={Star} color="bg-yellow-500" />
           <StatItem value={2847} label="SUCCESS STORIES" sublabel="Last 5 Years" icon={TrendingUp} color="bg-green-500" />
           <StatItem value={50000} label="ASPIRANTS" sublabel="Community Members" icon={Users} color="bg-blue-500" />

@@ -103,7 +103,7 @@ const Testimonials = () => (
     />
 
     {/* Modern Stats Bar - LIGHT VERSION */}
-    <section className="bg-white/80 py-6 md:py-8 -mt-14 relative z-20 mx-2 md:mx-4 lg:mx-auto max-w-5xl rounded-[20px] md:rounded-[32px] shadow-[0_20px_40px_rgba(0,0,0,0.08)] overflow-hidden border border-gray-100 backdrop-blur-xl">
+    <section className="bg-white/80 py-6 md:py-8 -mt-0 md:-mt-14 relative z-20 mx-2 md:mx-4 lg:mx-auto max-w-5xl rounded-[20px] md:rounded-[32px] shadow-[0_20px_40px_rgba(0,0,0,0.08)] overflow-hidden border border-gray-100 backdrop-blur-xl">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(82,92,235,0.03),transparent)]" />
       <div className="container mx-auto px-2 md:px-4 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 relative z-10">
         <StatBadge value={500} label="Annual Selections" />
@@ -113,7 +113,7 @@ const Testimonials = () => (
       </div>
     </section>
 
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-12 md:py-24 relative overflow-hidden">
       {/* Decorative blobs */}
       <div className="absolute top-1/4 -right-20 w-96 h-96 bg-orange/5 rounded-full blur-[100px]" />
       <div className="absolute bottom-1/4 -left-20 w-80 h-80 bg-navy/5 rounded-full blur-[80px]" />

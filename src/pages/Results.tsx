@@ -1,6 +1,5 @@
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { Trophy, Award, Star, X } from "lucide-react";
-import { useState } from "react";
+import { Trophy, Award, Star } from "lucide-react";
 
 const toppers = [
   {
@@ -136,36 +135,16 @@ const ResultCard = ({ topper }: { topper: typeof toppers[0] }) => {
 };
 
 const Results = () => {
-  const [showPopup, setShowPopup] = useState(true);
-
   return (
     <div className="min-h-screen bg-[#FDFDFF]">
-      {/* Popup Modal */}
-      {showPopup && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="relative">
-            <button
-              onClick={() => setShowPopup(false)}
-              className="absolute top-4 right-4 w-8 h-8 bg-white/80 hover:bg-white rounded-full flex items-center justify-center transition-colors z-10"
-            >
-              <X className="w-4 h-4 text-gray-600" />
-            </button>
-            <img
-              src="/om.jpeg"
-              alt="Student Achievement"
-              className="max-w-[90vw] max-h-[90vh] object-contain rounded-xl"
-            />
-          </div>
-        </div>
-      )}
-      <section className="w-full bg-white py-0 overflow-hidden shadow-sm">
-        <div className="flex flex-col md:flex-row items-stretch md:h-[350px] lg:h-[420px] xl:h-[480px] w-full">
+      <section className="w-full bg-white py-0 overflow-hidden shadow-sm -mt-1">
+        <div className="flex flex-col md:flex-row items-stretch h-[400px] md:h-[350px] lg:h-[420px] xl:h-[480px] w-full">
           {/* Results Banner - Full width */}
           <div className="w-full flex-1 bg-white flex items-center justify-center p-0">
             <img
-              src="/result.jpeg"
+              src="/resultbanner.jpeg"
               alt="Results Banner"
-              className="w-full h-full object-contain block"
+              className="w-full h-full object-contain md:object-fill block"
             />
           </div>
         </div>

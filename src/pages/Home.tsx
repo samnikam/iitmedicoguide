@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useScrollAnimation, useCountUp } from "@/hooks/use-scroll-animation";
-import { School, GraduationCap, Users, Clock, ChevronDown, Star, ArrowRight, Quote, PlayCircle, TrendingUp, Award, Shield } from "lucide-react";
+import { School, GraduationCap, Users, Clock, ChevronDown, Star, ArrowRight, Quote, PlayCircle, TrendingUp, Award, Shield, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
 /* ── YouTube Video Card ── */
@@ -141,7 +141,8 @@ const TestimonialPreview = ({
 /* ── HOME PAGE ── */
 const Home = () => {
   const [currentBanner, setCurrentBanner] = useState(0);
-  const banners = ["/poster1.jpeg", "/banner1.webp"];
+  const [showPopup, setShowPopup] = useState(true);
+  const banners = ["/posterimage1.jpeg", "/banner1.webp"];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -164,24 +165,42 @@ const Home = () => {
 
   return (
     <>
+      {/* Popup Modal */}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+          <div className="relative">
+            <button
+              onClick={() => setShowPopup(false)}
+              className="absolute top-4 right-4 w-8 h-8 bg-white/80 hover:bg-white rounded-full flex items-center justify-center transition-colors z-10"
+            >
+              <X className="w-4 h-4 text-gray-600" />
+            </button>
+            <img
+              src="/popup.jpeg"
+              alt="Popup Image"
+              className="max-w-[90vw] max-h-[90vh] object-contain rounded-xl"
+            />
+          </div>
+        </div>
+      )}
       {/* Hero Section */}
-      <section className="w-full relative overflow-hidden bg-white">
-        <div className="relative w-full h-[300px] md:h-[450px] lg:h-[550px] bg-white">
+      <section className="w-full relative overflow-hidden bg-white -mt-2">
+        <div className="relative w-full h-[50vh] md:h-[450px] lg:h-[550px] bg-white">
           {banners.map((banner, index) => (
             <img
               key={banner}
               src={banner}
               alt="Banner"
               className={`w-full transition-opacity duration-1000 ${currentBanner === index
-                ? "relative opacity-100 z-10 h-[300px] md:h-full object-contain md:object-fill"
-                : "absolute inset-0 opacity-0 z-0 h-[300px] md:h-full object-contain md:object-fill"
+                ? "relative opacity-100 z-10 h-[50vh] md:h-full object-contain md:object-fill"
+                : "absolute inset-0 opacity-0 z-0 h-[50vh] md:h-full object-contain md:object-fill"
                 }`}
             />
           ))}
         </div>
       </section>
 
-      <section className="bg-white pt-8 md:pt-0">
+      <section className="bg-white pt-0 md:pt-8">
         <div className="container mx-auto px-2 md:px-4 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 pb-8 md:pb-0">
           <StatItem value={4.9} label="STUDENT RATING" sublabel="Verified Reviews" icon={Star} color="bg-yellow-500" />
           <StatItem value={2847} label="SUCCESS STORIES" sublabel="Last 5 Years" icon={TrendingUp} color="bg-green-500" />

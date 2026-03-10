@@ -137,14 +137,19 @@ const ResultCard = ({ topper }: { topper: typeof toppers[0] }) => {
 const Results = () => {
   return (
     <div className="min-h-screen bg-[#FDFDFF]">
-      <section className="w-full bg-white py-0 overflow-hidden shadow-sm -mt-1">
-        <div className="flex flex-col md:flex-row items-stretch h-[400px] md:h-[350px] lg:h-[420px] xl:h-[480px] w-full">
+      <section className="w-full bg-white py-0 overflow-hidden shadow-sm" style={{marginTop: window.innerWidth < 768 ? '-62px' : '0'}}>
+        <div className="flex flex-col md:flex-row items-stretch h-[380px] xs:h-[400px] sm:h-[420px] md:h-[400px] lg:h-[450px] xl:h-[500px] w-full">
           {/* Results Banner - Full width */}
           <div className="w-full flex-1 bg-white flex items-center justify-center p-0">
             <img
+              src="/750 x 500.png"
+              alt="Results Banner Mobile"
+              className="w-full h-full object-contain block md:hidden"
+            />
+            <img
               src="/resultbanner.jpeg"
               alt="Results Banner"
-              className="w-full h-full object-contain md:object-fill block"
+              className="w-[120%] h-full object-contain hidden md:block border border-gray-300"
             />
           </div>
         </div>

@@ -58,10 +58,10 @@ const Navbar = () => {
     >
       <div className="max-w-[1400px] mx-auto w-full px-2 lg:px-4 flex items-center justify-between py-1 md:py-1.5">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-1">
+        <Link to="/" className="flex items-center gap-2">
           <img src="/logo1.svg" alt="IIT Medico Guide" className="h-12 lg:h-14" />
           <span className="font-bold text-lg lg:text-xl text-navy">
-            iit<span className="text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">medico</span> <span className="text-navy">guide</span>
+            iit<span className="text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">medico</span><span className="text-navy">guide</span>
           </span>
         </Link>
 

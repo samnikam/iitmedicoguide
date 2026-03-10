@@ -184,14 +184,14 @@ const Home = () => {
         </div>
       )}
       {/* Hero Section */}
-      <section className="w-full relative overflow-hidden bg-white -mt-2">
+      <section className="w-full relative overflow-hidden bg-white" style={{marginTop: window.innerWidth < 768 ? '-320px' : '0'}}>
         <div className="relative w-full h-[50vh] md:h-[450px] lg:h-[550px] bg-white">
           {banners.map((banner, index) => (
             <img
               key={banner}
               src={banner}
               alt="Banner"
-              className={`w-full transition-opacity duration-1000 ${currentBanner === index
+              className={`w-full transition-opacity duration-1000 hidden md:block ${currentBanner === index
                 ? "relative opacity-100 z-10 h-[50vh] md:h-full object-contain md:object-fill"
                 : "absolute inset-0 opacity-0 z-0 h-[50vh] md:h-full object-contain md:object-fill"
                 }`}
@@ -201,6 +201,13 @@ const Home = () => {
       </section>
 
       <section className="bg-white pt-0 md:pt-8">
+        <div className="container mx-auto px-2 md:px-4 relative z-10">
+          <img
+            src="/750 x 500 - 2.png"
+            alt="Mobile Banner"
+            className="w-full h-auto object-contain block md:hidden mb-4"
+          />
+        </div>
         <div className="container mx-auto px-2 md:px-4 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 pb-8 md:pb-0">
           <StatItem value={4.9} label="STUDENT RATING" sublabel="Verified Reviews" icon={Star} color="bg-yellow-500" />
           <StatItem value={2847} label="SUCCESS STORIES" sublabel="Last 5 Years" icon={TrendingUp} color="bg-green-500" />

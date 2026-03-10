@@ -111,7 +111,7 @@ const ResultCard = ({ topper }: { topper: typeof toppers[0] }) => {
     >
       {/* Blue header */}
       <div className="bg-navy rounded-t-xl -mx-4 -mt-4 mb-4 h-12"></div>
-      
+
       {/* Profile image - positioned to overlap header */}
       <div className="flex justify-center -mt-14 mb-2">
         <div className="w-24 h-24 rounded-full border-3 border-white shadow-lg overflow-hidden bg-white">
@@ -158,16 +158,13 @@ const Results = () => {
           </div>
         </div>
       )}
-      <section className="w-full bg-white py-0 overflow-hidden shadow-sm">
-        <div className="flex flex-col md:flex-row items-stretch md:h-[350px] lg:h-[420px] xl:h-[480px] w-full">
-          {/* Results Banner - Full width */}
-          <div className="w-full flex-1 bg-white flex items-center justify-center p-0">
-            <img
-              src="/result.jpeg"
-              alt="Results Banner"
-              className="w-full h-full object-contain block"
-            />
-          </div>
+      <section className="w-full bg-white pt-2 md:pt-0 border-b border-gray-50 overflow-visible">
+        <div className="w-full flex justify-center items-start">
+          <img
+            src="/result.jpeg"
+            alt="Results Banner"
+            className="w-full h-auto max-h-[350px] md:max-h-[600px] object-contain"
+          />
         </div>
       </section>
       <section className="py-12 relative overflow-hidden">

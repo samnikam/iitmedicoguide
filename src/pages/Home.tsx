@@ -184,7 +184,7 @@ const Home = () => {
         </div>
       )}
       {/* Hero Section */}
-      <section className="w-full relative overflow-hidden bg-white" style={{marginTop: window.innerWidth < 768 ? '-320px' : '0'}}>
+      <section className="w-full relative overflow-hidden bg-white" style={{marginTop: window.innerWidth < 768 ? '-120px' : '0'}}>
         <div className="relative w-full h-[50vh] md:h-[450px] lg:h-[550px] bg-white">
           {banners.map((banner, index) => (
             <img

@@ -184,25 +184,28 @@ const Home = () => {
         </div>
       )}
       {/* Hero Section */}
-      <section className="w-full relative overflow-hidden bg-white" style={{marginTop: window.innerWidth < 768 ? '-360px' : '0'}}>
-        <div className="relative w-full h-[50vh] md:h-[450px] lg:h-[550px] bg-white">
+      <section className="w-full relative overflow-hidden bg-white">
+        {/* Desktop Banners */}
+        <div className="relative w-full hidden md:block md:h-[450px] lg:h-[550px] bg-white">
           {banners.map((banner, index) => (
             <img
               key={banner}
               src={banner}
               alt="Banner"
-              className={`w-full transition-opacity duration-1000 hidden md:block ${currentBanner === index
-                ? "relative opacity-100 z-10 h-[50vh] md:h-full object-contain md:object-fill"
-                : "absolute inset-0 opacity-0 z-0 h-[50vh] md:h-full object-contain md:object-fill"
+              className={`w-full transition-opacity duration-1000 ${currentBanner === index
+                ? "relative opacity-100 z-10 md:h-full object-contain md:object-fill"
+                : "absolute inset-0 opacity-0 z-0 md:h-full object-contain md:object-fill"
                 }`}
             />
           ))}
         </div>
-        <div className="w-full h-[380px] xs:h-[400px] sm:h-[420px] md:hidden bg-white flex items-center justify-center p-0">
+
+        {/* Mobile Banner */}
+        <div className="w-full md:hidden bg-white">
           <img
             src="/750 x 500 - 2.png"
             alt="Mobile Banner"
-            className="w-full h-full object-contain"
+            className="w-full h-auto object-contain"
           />
         </div>
       </section>

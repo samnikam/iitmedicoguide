@@ -210,12 +210,12 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="bg-white pt-0 md:pt-8">
-        <div className="container mx-auto px-2 md:px-4 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 pb-8 md:pb-0">
-          <StatItem value={4.9} label="STUDENT RATING" sublabel="Verified Reviews" icon={Star} color="bg-yellow-500" />
-          <StatItem value={2847} label="SUCCESS STORIES" sublabel="Last 5 Years" icon={TrendingUp} color="bg-green-500" />
-          <StatItem value={50000} label="ASPIRANTS" sublabel="Community Members" icon={Users} color="bg-blue-500" />
-          <StatItem value={15} label="YEARS LEGACY" sublabel="Of Trust & Quality" icon={Shield} color="bg-orange-500" />
+      <section className="bg-white pt-4 md:pt-8 pb-4 md:pb-0">
+        <div className="container mx-auto px-2 md:px-4 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+          <StatItem value={40} label="STUDENTS PER BATCH" sublabel="Limited Batch Size" icon={Users} color="bg-blue-500" />
+          <StatItem value={1} label="MAHARASHTRA STATE RANK" sublabel="Produced Rank 1" icon={Award} color="bg-yellow-500" />
+          <StatItem value={11} label="HOURS STUDY SCHEDULE" sublabel="Dedicated Study Time" icon={Clock} color="bg-green-500" />
+          <StatItem value={100} label="IITIANS & DOCTORS" sublabel="Expert Faculty Team" icon={GraduationCap} color="bg-orange-500" />
         </div>
       </section>
       {/* Student Enquiry Form */}
@@ -368,29 +368,25 @@ const Home = () => {
                 <img
                   src="/ramesh.webp"
                   alt="Students studying"
-                  className="w-full h-80 object-cover rounded-2xl shadow-lg"
+                  className="w-full aspect-square md:h-80 object-cover rounded-2xl shadow-lg"
                 />
                 <img
                   src="/school.webp"
                   alt="Campus"
-                  className="w-full h-80 object-cover rounded-2xl shadow-lg"
+                  className="w-full aspect-square md:h-80 object-cover rounded-2xl shadow-lg"
                 />
               </div>
               <div className="space-y-4">
                 <img
                   src="/parag.jpeg"
                   alt="Teacher"
-                  className="w-full h-80 object-cover rounded-2xl shadow-lg"
+                  className="w-full aspect-square md:h-80 object-cover rounded-2xl shadow-lg"
                 />
-                <div className="relative w-full h-80 bg-navy rounded-2xl shadow-lg overflow-hidden">
-                  <div className="absolute top-6 left-6 right-6 z-10">
-                    <p className="text-yellow-400 font-bold text-lg">IITian, NITian AND DOCTOR</p>
-                    <p className="text-white font-bold text-xl">FACULTIES</p>
-                  </div>
+                <div className="relative w-full aspect-square md:h-80 bg-navy rounded-2xl shadow-lg overflow-hidden">
                   <img
                     src="/faculties.webp"
                     alt="Faculties"
-                    className="absolute bottom-0 w-full h-48 object-cover"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>

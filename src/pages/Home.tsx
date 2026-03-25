@@ -384,7 +384,7 @@ const Home = () => {
                 />
                 <div className="relative w-full aspect-square md:h-80 bg-navy rounded-2xl shadow-lg overflow-hidden">
                   <img
-                    src="/faculties.webp"
+                    src="/staff.jpeg"
                     alt="Faculties"
                     className="w-full h-full object-cover"
                   />

@@ -142,6 +142,15 @@ const TestimonialPreview = ({
 const Home = () => {
   const [currentBanner, setCurrentBanner] = useState(0);
   const [showPopup, setShowPopup] = useState(true);
+  const [formData, setFormData] = useState({
+    studentName: "",
+    parentName: "",
+    email: "",
+    phone: "",
+    classLevel: "",
+    course: "",
+    message: "",
+  });
   const banners = ["/posterimage1.jpeg", "/banner1.webp"];
 
   useEffect(() => {
@@ -268,52 +277,56 @@ const Home = () => {
                   Student Enquiry Form!
                 </h2>
               </div>
-              <form className="space-y-4">
+              <form className="space-y-4" onSubmit={(e) => {
+                e.preventDefault();
+                const text = `📋 *New Enquiry - IITMedico Guide*%0A%0A👤 *Student Name:* ${formData.studentName}%0A👨‍👩‍👦 *Parent Name:* ${formData.parentName}%0A📧 *Email:* ${formData.email}%0A📱 *Phone:* ${formData.phone}%0A🎓 *Class:* ${formData.classLevel}%0A📚 *Course Interest:* ${formData.course}%0A💬 *Message:* ${formData.message || "N/A"}`;
+                window.open(`https://wa.me/917030300666?text=${text}`, "_blank");
+              }}>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-bold text-navy mb-2">Student Name *</label>
-                    <input type="text" required className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all shadow-sm" placeholder="Enter full name" />
+                    <input type="text" required value={formData.studentName} onChange={(e) => setFormData({...formData, studentName: e.target.value})} className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all shadow-sm" placeholder="Enter full name" />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-navy mb-2">Parent Name *</label>
-                    <input type="text" required className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all shadow-sm" placeholder="Enter parent name" />
+                    <input type="text" required value={formData.parentName} onChange={(e) => setFormData({...formData, parentName: e.target.value})} className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all shadow-sm" placeholder="Enter parent name" />
                   </div>
                 </div>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-bold text-navy mb-2">Email *</label>
-                    <input type="email" required className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all shadow-sm" placeholder="your@email.com" />
+                    <input type="email" required value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all shadow-sm" placeholder="your@email.com" />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-navy mb-2">Phone Number *</label>
-                    <input type="tel" required className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all shadow-sm" placeholder="10-digit number" />
+                    <input type="tel" required value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all shadow-sm" placeholder="10-digit number" />
                   </div>
                 </div>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-bold text-navy mb-2">Class *</label>
-                    <select required className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all shadow-sm">
+                    <select required value={formData.classLevel} onChange={(e) => setFormData({...formData, classLevel: e.target.value})} className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all shadow-sm">
                       <option value="">Select Class</option>
-                      <option value="8">Class 8</option>
-                      <option value="9">Class 9</option>
-                      <option value="10">Class 10</option>
-                      <option value="11">Class 11</option>
-                      <option value="12">Class 12</option>
+                      <option value="Class 8">Class 8</option>
+                      <option value="Class 9">Class 9</option>
+                      <option value="Class 10">Class 10</option>
+                      <option value="Class 11">Class 11</option>
+                      <option value="Class 12">Class 12</option>
                     </select>
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-navy mb-2">Course Interest *</label>
-                    <select required className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all shadow-sm">
+                    <select required value={formData.course} onChange={(e) => setFormData({...formData, course: e.target.value})} className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all shadow-sm">
                       <option value="">Select Course</option>
-                      <option value="jee">JEE Advanced</option>
-                      <option value="neet">NEET UG</option>
-                      <option value="mht-cet">MHT-CET</option>
+                      <option value="JEE Advanced">JEE Advanced</option>
+                      <option value="NEET UG">NEET UG</option>
+                      <option value="MHT-CET">MHT-CET</option>
                     </select>
                   </div>
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-navy mb-2">Message</label>
-                  <textarea rows={3} className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all resize-none shadow-sm" placeholder="Any specific questions or requirements..."></textarea>
+                  <textarea rows={3} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all resize-none shadow-sm" placeholder="Any specific questions or requirements..."></textarea>
                 </div>
                 <button type="submit" className="w-full bg-[#0A2540] hover:bg-[#071a2e] text-white font-bold text-[1.1rem] py-4 rounded-xl transition-all duration-300 mt-6 shadow-md">
                   Submit

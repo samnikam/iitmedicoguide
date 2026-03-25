@@ -7,24 +7,22 @@ const toppers = [
     exam: "JEE",
     rank: "99.83%",
     college: "NIT Surathkal",
-    image: "/krishna.png",
+    image: "/krishna.jpeg",
     color: "from-amber-500 to-amber-700",
   },
   {
-    name: "Purva",
+    name: "Purva Patil",
     exam: "JEE",
     rank: "99.5%",
     college: "IIT Roorkee",
-    image: "/placeholder.svg",
-    color: "from-purple-500 to-purple-700",
+    image: "/purva.jpeg",
   },
   {
     name: "Yayati Purkar",
     exam: "JEE",
     rank: "99.27%",
     college: "IIT Kharagpur",
-    image: "/placeholder.svg",
-    color: "from-indigo-500 to-indigo-700",
+    image: "/yayati.jpeg",
   },
   {
     name: "Aagam Kasliwal",
@@ -43,27 +41,26 @@ const toppers = [
     color: "from-emerald-500 to-emerald-700",
   },
   {
-    name: "Krishna",
+    name: "Manish Karande",
     exam: "JEE",
     rank: "99.66%",
-    college: "IIT Kharagpur",
-    image: "/placeholder.svg",
-    color: "from-teal-500 to-teal-700",
+    college: "IIT Jammu",
+    image: "/manish.jpeg",
   },
   {
     name: "Chanchal More",
     exam: "NEET",
     rank: "GMC Ambernath",
     college: "Medical College",
-    image: "/placeholder.svg",
+    image: "/Chanchal.JPG",
     color: "from-pink-500 to-pink-700",
   },
   {
-    name: "Saniya",
+    name: "Saniya Sonawane",
     exam: "NEET",
     rank: "GMC Solapur",
     college: "Medical College",
-    image: "/placeholder.svg",
+    image: "/Saniya.JPG",
     color: "from-cyan-500 to-cyan-700",
   },
   {
@@ -75,28 +72,27 @@ const toppers = [
     color: "from-blue-500 to-blue-700",
   },
   {
-    name: "Jitendra",
+    name: "Jinendra Jangada",
     exam: "NEET",
     rank: "GMC Satara",
     college: "Medical College",
-    image: "/placeholder.svg",
+    image: "/Jinendra.JPG",
     color: "from-red-500 to-red-700",
   },
   {
-    name: "Paulomi",
+    name: "Paulomi Gadling",
     exam: "NEET",
     rank: "GMC Nanded",
     college: "Medical College",
-    image: "/placeholder.svg",
+    image: "/Paulomi.JPG",
     color: "from-green-500 to-green-700",
   },
   {
-    name: "Ronit",
+    name: "Ronit Shirsath",
     exam: "JEE",
     rank: "99.2%",
     college: "IIT Kharagpur",
-    image: "/placeholder.svg",
-    color: "from-violet-500 to-violet-700",
+    image: "/ronit.jpeg",
   },
 ];
 
@@ -117,7 +113,7 @@ const ResultCard = ({ topper }: { topper: typeof toppers[0] }) => {
           <img
             src={topper.image}
             alt={topper.name}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
         </div>
       </div>
@@ -154,7 +150,7 @@ const Results = () => {
           </div>
         </div>
       </section>
-      <section className="py-12 relative overflow-hidden">
+      <section className="py-12 relative overflow-hidden bg-[#f5f7fa]">
         <div className="absolute top-1/4 -right-20 w-96 h-96 bg-orange/5 rounded-full blur-[100px]" />
         <div className="absolute bottom-1/4 -left-20 w-80 h-80 bg-navy/5 rounded-full blur-[80px]" />
 

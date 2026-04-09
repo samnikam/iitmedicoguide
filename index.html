@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/Logo.png" />
+    <link rel="apple-touch-icon" href="/Logo.png" />
+    <!-- TODO: Set the document title to the name of your application -->
+    <title>iitmedicoguide</title>
+    <meta name="description" content="Lovable Generated Project">
+    <meta name="author" content="Lovable" />
+
+    <!-- TODO: Update og:title to match your application name -->
+    
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8e8e4c39-58ae-4aad-ba3a-3eaa6883ae5c/id-preview-a4235ce6--9fb17781-e092-44ea-bd96-a331203e4320.lovable.app-1772007921330.png">
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Lovable" />
+    <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8e8e4c39-58ae-4aad-ba3a-3eaa6883ae5c/id-preview-a4235ce6--9fb17781-e092-44ea-bd96-a331203e4320.lovable.app-1772007921330.png">
+    <meta property="og:title" content="Lovable App">
+  <meta name="twitter:title" content="Lovable App">
+  <meta property="og:description" content="Lovable Generated Project">
+  <meta name="twitter:description" content="Lovable Generated Project">
+  <script type="module" crossorigin src="/assets/index-COf9uIS3.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-VGYh9XA3.css">
+  <link rel="stylesheet" href="/assets/mobile-fix.css">
+  <script>
+    // Fix specific counter values on the site
+    const observer = new MutationObserver(() => {
+      document.querySelectorAll('.font-bold.text-sm').forEach(el => {
+        if (el.textContent.trim() === '1+' && el.closest('.bg-white.rounded-lg.shadow-md')) {
+          const parent = el.closest('.bg-white.rounded-lg.shadow-md');
+          const label = parent && parent.querySelector('.font-semibold');
+          if (label && label.textContent.includes('MAHARASHTRA')) {
+            el.textContent = '1';
+          }
+        }
+      });
+      // Fix testimonials page counters
+      document.querySelectorAll('.font-bold.text-navy.mb-1').forEach(el => {
+        const label = el.parentElement && el.parentElement.querySelector('.font-bold.text-orange');
+        if (!label) return;
+        const labelText = label.textContent.trim().toUpperCase();
+        if (labelText.includes('TOTAL STUDENTS') && el.textContent.trim() === '14,000+') {
+          el.textContent = '8,000+';
+        }
+        if (labelText.includes('IITIAN') && el.textContent.trim() === '20+') {
+          el.textContent = '100+';
+        }
+      });
+      // Inject extra testimonial row on testimonials page
+      if (window.location.pathname === '/testimonials') {
+        const grid = document.querySelector('.grid.gap-6.max-w-7xl');
+        if (grid && !document.getElementById('extra-testimonials')) {
+          // Change existing grid to 4 columns
+          grid.classList.remove('lg:grid-cols-3');
+          grid.classList.add('lg:grid-cols-4');
+          const extraRow = document.createElement('div');
+          extraRow.id = 'extra-testimonials';
+          extraRow.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto';
+          extraRow.style.cssText = 'margin-bottom:1.5rem;';
+          const students = [
+            {name:'Rahul Sawant',img:'/Rahul%20Shivaji%20Sawant.jpg',quote:'The structured study plan and daily tests helped me stay consistent throughout my preparation.',tag:'JEE Student'},
+            {name:'Divya Salve',img:'/Divya.JPG',quote:'Faculty members are always available for doubt solving. The mentorship sessions were game-changing.',tag:'JEE Student'},
+            {name:'Atharva',img:'/ATHARVA.JPG',quote:'The integrated coaching system saved me time and helped me focus on what matters most.',tag:'JEE Student'},
+            {name:'Arya Thorat',img:'/Arya%20Thorat.JPG',quote:'Excellent faculty and study environment. The personalized attention helped me improve significantly.',tag:'JEE Student'}
+          ];
+          const starSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#F6A01A" stroke="#F6A01A" style="width:1rem;height:1rem;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+          const stars = Array(5).fill(starSvg).join('');
+          extraRow.innerHTML = students.map(s => `
+            <div class="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+              <div style="display:flex;gap:0.25rem;margin-bottom:1rem;">${stars}</div>
+              <p class="text-gray-600 leading-relaxed italic mb-6 text-sm">&ldquo;${s.quote}&rdquo;</p>
+              <div style="display:flex;align-items:center;gap:0.75rem;border-top:1px solid #f3f4f6;padding-top:1rem;">
+                <img src="${s.img}" alt="${s.name}" style="width:4rem;height:4rem;border-radius:9999px;object-fit:cover;object-position:top;box-shadow:0 0 0 2px #e5e7eb;"/>
+                <div>
+                  <h4 class="font-bold text-gray-900 text-sm">${s.name}</h4>
+                  <p style="font-size:0.75rem;font-weight:600;color:#525CEB;">${s.tag}</p>
+                </div>
+              </div>
+            </div>
+          `).join('');
+          grid.parentNode.insertBefore(extraRow, grid);
+        }
+      }
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+      observer.observe(document.getElementById('root'), { childList: true, subtree: true, characterData: true });
+    });
+  </script>
+</head>
+
+  <body>
+    <div id="root"></div>
+
+    <!-- WhatsApp floating button -->
+    <a href="https://wa.me/917030300666" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:9999;width:3.5rem;height:3.5rem;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.25);transition:transform 0.3s;text-decoration:none;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </body>
+</html>
